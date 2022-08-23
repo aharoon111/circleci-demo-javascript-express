@@ -6,7 +6,6 @@ command:
       - run: echo ${CIRCLE_WORKFLOW_ID}
 
 workflows:
-  version: 2
   build:
     jobs:
       - build
@@ -16,12 +15,6 @@ workflows:
             - save_hello_world_output
       - my_job
 jobs:
-
-  my_job:
-    docker:
-      - image: circleci/node:13.8.0
-    steps:
-      - print_pipeline_id
 
   build:
     working_directory: ~/mern-starter
@@ -75,3 +68,8 @@ jobs:
           at: ~/
       - run: cat ~/output.txt
 
+  my_job:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - print_pipeline_id
