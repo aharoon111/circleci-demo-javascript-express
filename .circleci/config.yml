@@ -75,7 +75,7 @@ jobs:
     steps:
       - print_pipeline_id
 
-   my_job2:
+  my_job2:
     docker:
       - image: circleci/node:13.8.0
     steps:
